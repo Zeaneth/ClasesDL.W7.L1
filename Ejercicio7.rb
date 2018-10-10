@@ -12,16 +12,17 @@ inventario = {"Notebooks": 4,
 
 opcion_elegida = 0
 
-message = 'Bienvenido a menú Desafío Latam'
+mensaje_bienvenida = 'Bienvenido a menú Desafío Latam'
 
 opciones = ['Opción 01: agregar',
-    'Opción 02: eliminar',
-    'Opción 03: actualizar',
-    'Opción 04; stock_total',
-    'Opción 05: max_stock',
-    'Opción 06: hay_inventario',
-    'Opción 07: pina_colada',
-]
+            'Opción 02: eliminar',
+            'Opción 03: actualizar',
+            'Opción 04; stock_total',
+            'Opción 05: max_stock',
+            'Opción 06: hay_inventario',
+            'Opción 07: pina_colada',
+            ]
+cantidad_opciones = opciones.length
 
 # 2 - Declarar el procesamiento
 #Mensaje de Bienvenida
@@ -39,14 +40,19 @@ def mostrar_menu(opciones)
 end
 
 def escoger_alternativa(opciones)
-    alternativa = (gets.chomp.to_f)to_i
-    cantidad_opciones = opciones.length: {minimum:3, maximum:3}
-    if 0 < alternativa and alternativa < cantidad_opciones
-        return alternativa
-    else
+    alternativa_ingresada = gets.chomp
+    alternativa_transformada = (alternativa_ingresada.to_f).to_i
+    cantidad_opciones = opciones.length
+
+    while !(0 < alternativa_transformada and alternativa_transformada < cantidad_opciones)
         puts "Tu alternativa es #{alternativa}"
-        puts "Debes escoger un número entre 1 y #{cantidad_opciones}"  
+        puts "Debes escoger un número entre 1 y #{cantidad_opciones}"
+        alternativa = (gets.chomp.to_f)to_i  
+    end
+
+    return alternativa_es  
 end
+    
 
 
 # Opción 1
@@ -79,3 +85,12 @@ end
 
 
 # 3 - Procesar
+
+#1 Menú de 7 Opciones
+welcome_message(mensaje_bienvenida)
+mostrar_menu(opciones)
+
+
+opcion_escogida = escoger_alternativa(opcion_elegida)
+
+puts "Alternativa escogida: #{escoger_alternativa(opciones)}
