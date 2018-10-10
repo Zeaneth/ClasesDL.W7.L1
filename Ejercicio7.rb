@@ -22,6 +22,7 @@ opciones = ['Opción 01: agregar',
             'Opción 06: hay_inventario',
             'Opción 07: pina_colada'
             ]
+            
 opcion_salida = opciones.length
 
 
