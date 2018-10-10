@@ -5,7 +5,7 @@
 # 3 - Procesar
 
 # 1 - Información del problema
-inventario = {"Notebooks": 4,
+inventario_inicial = {"Notebooks": 4,
               "PC Escritorio": 6, 
               "Routers": 10, 
               "Impresoras": 6}
@@ -20,9 +20,11 @@ opciones = ['Opción 01: agregar',
             'Opción 04; stock_total',
             'Opción 05: max_stock',
             'Opción 06: hay_inventario',
-            'Opción 07: pina_colada',
+            'Opción 07: pina_colada'
             ]
-cantidad_opciones = opciones.length
+opcion_salida = opciones.length
+
+
 
 # 2 - Declarar el procesamiento
 #Mensaje de Bienvenida
@@ -44,7 +46,7 @@ def escoger_alternativa(opciones)
     alternativa_transformada = (alternativa_ingresada.to_f).to_i
     cantidad_opciones = opciones.length
 
-    while !(0 < alternativa_transformada and alternativa_transformada < cantidad_opciones)
+    while !(0 < alternativa_transformada and alternativa_transformada <= cantidad_opciones)
         puts "Tu alternativa es #{alternativa}"
         puts "Debes escoger un número entre 1 y #{cantidad_opciones}"
         alternativa = (gets.chomp.to_f)to_i  
@@ -56,31 +58,31 @@ end
 
 
 # Opción 1
-def agregar(user_input, inventario)
+def agregar(inventario)
 end
 
 # Opción 2
-def eliminar(user_input, inventario)
+def eliminar(inventario)
 end
 
 # Opción 3
-def actualizar(user_input, inventario)
+def actualizar(inventario)
 end
 
 # Opción 4
-def stock_total(user_input, inventario)
+def stock_total(inventario)
 end
 
 # Opción 5
-def max_stock(user_input, inventario)
+def max_stock(inventario)
 end
 
 # Opción 6
-def hayinventario(user_input, inventario)
+def hayinventario(inventario)
 end
 
 # Opción 7
-def salir(user_input, inventario)
+def salir(inventario)
 end
 
 
@@ -90,6 +92,18 @@ end
 welcome_message(mensaje_bienvenida)
 mostrar_menu(opciones)
 
+while (opcion_escogida != opcion_salida) do
+    opcion_escogida = escoger_alternativa(opciones)
+    case opcion_escogida
+    when 1
+        agregar(inventario_inicial)
+    when 2
+        eliminar(inventario_inicial)
+    when opcion_salida
+        salir(inventario_inicial)
+        break
+    end
+end
 
 opcion_escogida = escoger_alternativa(opcion_elegida)
 
