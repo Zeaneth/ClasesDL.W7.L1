@@ -111,6 +111,10 @@ end
 
 # Opción 4
 def stock_total(inventario)
+    puts "Seleccionó la opción 'Stock Total'."
+    suma = 0
+    inventario.each { |producto, stock| suma += stock}
+    puts "El stock almacenado actual es de #{suma} unidades."
 end
 
 # Opción 5
