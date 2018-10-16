@@ -177,5 +177,5 @@ while (opcion_elegida != opcion_salida) do
     end
 end
 
-opcion_elegida = escoger_alternativa(opcion_elegida)
-puts "Alternativa escogida: #{escoger_alternativa(opciones)}"
+#opcion_elegida = escoger_alternativa(opcion_elegida)
+#puts "Alternativa escogida: #{escoger_alternativa(opciones)}"
