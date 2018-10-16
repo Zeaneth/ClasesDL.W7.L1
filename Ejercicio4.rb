@@ -15,7 +15,7 @@ personas = ["Carolina", "Alejandro", "Maria Jesús", "Valentín"]
 edades = [32, 28, 41, 19]
 
 personas_hash = personas.zip(edades)
-print personas_hash
+print personas_hash.to_h
 
 def age_average(hash)
     sum = 0
