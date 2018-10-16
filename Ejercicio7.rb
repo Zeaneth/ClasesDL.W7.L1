@@ -94,11 +94,19 @@ def eliminar(inventario)
     producto = gets.chomp.to_s
     inventario.delete(producto)
     # print inventario, ¿¿Cómo hago para eliminar las llaves que son símbolos??
-    print "Has eliminado el producto #{producto}\n"
+    print "Has eliminado del inventario el producto #{producto}\n"
 end
 
 # Opción 3
 def actualizar(inventario)
+    puts "Seleccionó la opción 'Actualizar'."
+    puts "Indique el nombre del producto por actualizar:"
+    producto = gets.chomp.to_s
+    puts "Ahora indique la cantidad de stock que actualizará:"
+    stock = gets.chomp.to_i
+    inventario[producto] = stock
+    print inventario
+    print "Has actualizado el producto #{producto} con el nuevo stock de #{stock}\n"
 end
 
 # Opción 4
