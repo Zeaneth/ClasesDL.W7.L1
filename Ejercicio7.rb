@@ -26,20 +26,22 @@ inventario_inicial = {"Notebooks": 4,
                       "Routers": 10, 
                       "Impresoras": 6}
 
+inventario_actualizado = inventario_inicial
+
 opcion_elegida = 0
 
-opciones = ['Opción 01: agregar',
-            'Opción 02: eliminar',
-            'Opción 03: actualizar',
-            'Opción 04; stock_total',
-            'Opción 05: max_stock',
-            'Opción 06: hay_inventario',
-            'Opción 07: pina_colada'
+opciones = ['Opción 01: Agregar item',
+            'Opción 02: Eliminar item',
+            'Opción 03: Actualizar item de inventario (nombre y stock)',
+            'Opción 04; Consulta de stock total',
+            'Opción 05: Consulta de producto con máximo stock',
+            'Opción 06: Consulta de inventario',
+            'Opción 07: Salir de inventario'
             ]
 
 opcion_salida = opciones.length
 mensaje_bienvenida = """Bienvenido al software de Inventario!!! Favor ingresa una alternativa de las disponibles :)"""
-
+mensaje_menu = "Por favor, elija una de las opciones disponibles ya mencionadas:\n"
 
 # 2 - Declarar el procesamiento
 
@@ -75,10 +77,24 @@ def escoger_alternativa(opciones)
 
 # Opción 1
 def agregar(inventario)
+    puts "Seleccionó la opción 'Agregar'."
+    puts "Indique el nombre del producto por añadir:"
+    producto = gets.chomp.to_s
+    puts "Ahora indique la cantidad de stock:"
+    stock = gets.chomp.to_i
+    inventario[producto] = stock
+    # print inventario, ¿¿Cómo hago para que si vuelvo a escribir el mismo producto, me lo sume??
+    print "Has agregado el producto #{producto} con el stock de #{stock}\n"
 end
 
 # Opción 2
 def eliminar(inventario)
+    puts "Seleccionó la opción 'Eliminar'."
+    puts "Indique el nombre de su producto por eliminar:"
+    producto = gets.chomp.to_s
+    inventario.delete(producto)
+    # print inventario, ¿¿Cómo hago para eliminar las llaves que son símbolos??
+    print "Has eliminado el producto #{producto}\n"
 end
 
 # Opción 3
@@ -115,8 +131,22 @@ while (opcion_elegida != opcion_salida) do
     case opcion_elegida
     when 1
         agregar(inventario_inicial)
+        welcome_message(mensaje_menu)
     when 2
         eliminar(inventario_inicial)
+        welcome_message(mensaje_menu)
+    when 3
+        actualizar(inventario_inicial)
+        welcome_message(mensaje_menu)
+    when 4
+        stock_total(inventario_inicial)
+        welcome_message(mensaje_menu)
+    when 5
+        max_stock(inventario_inicial)
+        welcome_message(mensaje_menu)
+    when 6
+        hayinventario(inventario_inicial)
+        welcome_message(mensaje_menu)
     when opcion_salida
         salir(inventario_inicial)
         break
