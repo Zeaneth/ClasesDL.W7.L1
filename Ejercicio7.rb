@@ -6,9 +6,9 @@
 
 # 1 - Información del problema
 inventario_inicial = {"Notebooks": 4,
-              "PC Escritorio": 6, 
-              "Routers": 10, 
-              "Impresoras": 6}
+                      "PC Escritorio": 6, 
+                      "Routers": 10, 
+                      "Impresoras": 6}
 
 opcion_elegida = 0
 
