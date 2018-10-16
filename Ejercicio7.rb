@@ -22,7 +22,7 @@ opciones = ['Opción 01: agregar',
             'Opción 06: hay_inventario',
             'Opción 07: pina_colada'
             ]
-            
+
 opcion_salida = opciones.length
 
 
@@ -108,4 +108,4 @@ end
 
 opcion_escogida = escoger_alternativa(opcion_elegida)
 
-puts "Alternativa escogida: #{escoger_alternativa(opciones)}
+puts "Alternativa escogida: #{escoger_alternativa(opciones)}"
