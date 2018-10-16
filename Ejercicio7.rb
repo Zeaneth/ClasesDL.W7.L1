@@ -119,10 +119,22 @@ end
 
 # Opción 5
 def max_stock(inventario)
+    puts "Seleccionó la opción 'Consulta de stock máximo'"
+    print "El stock con mayor unidades es: "
+    print inventario.select { | _product , stock| stock == inventario.values.max}.keys
+    print " con #{inventario.select { | _product , stock| stock == inventario.values.max}.values} unidades\n"
+    #puts "El producto con mayor stock es #{inventario.max_by { |stock| stock}}."
+    # ¿¿Cómo hago para mostrar el producto y stock como string en ves de arreglo??
 end
 
 # Opción 6
 def hayinventario(inventario)
+    puts "Seleccionó la opción 'Consulta de existencia de inventario'."
+    if inventario.empty?
+        then puts "No quedan ítem en el inventario"
+    else
+        puts "Quedan ítems en el inventario :)"
+    end
 end
 
 # Opción 7
@@ -166,5 +178,4 @@ while (opcion_elegida != opcion_salida) do
 end
 
 opcion_elegida = escoger_alternativa(opcion_elegida)
-
 puts "Alternativa escogida: #{escoger_alternativa(opciones)}"
